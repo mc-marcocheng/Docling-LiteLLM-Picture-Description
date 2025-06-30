@@ -70,6 +70,7 @@ class PictureDescriptionLiteLLMModel(PictureDescriptionBaseModel):
                     },
                 ],
                 timeout=self.options.timeout,
+                **self.options.kwargs,
             )
             return response["choices"][0]["message"]["content"].strip()
 
